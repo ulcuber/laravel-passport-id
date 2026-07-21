@@ -69,6 +69,7 @@ return [
 
     'prefix' => env(
         'HORIZON_PREFIX',
+        // @phpstan-ignore-next-line
         Str::slug(env('APP_NAME', 'laravel'), '_').'_horizon:'
     ),
 

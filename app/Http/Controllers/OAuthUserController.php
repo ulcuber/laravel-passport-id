@@ -11,7 +11,7 @@ use App\Models\User;
  */
 class OAuthUserController extends Controller
 {
-    public function __invoke()
+    public function __invoke(): ?array
     {
         return transform(auth()->user(), fn (User $user) => [
             'id' => $user->id,

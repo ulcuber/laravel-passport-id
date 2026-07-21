@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configureDefaults();
 
         Passport::loadKeysFrom(__DIR__ . '/../../../secrets/oauth');
+        // @phpstan-ignore-next-line
         Passport::authorizationView(fn (array $parameters) => Inertia::render('passport/Authorize', $parameters));
         Passport::tokensCan([
             'openid' => 'Authenticate and get user name',

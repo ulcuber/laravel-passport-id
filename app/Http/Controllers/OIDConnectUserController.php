@@ -11,7 +11,7 @@ use App\Models\User;
  */
 class OIDConnectUserController extends Controller
 {
-    public function __invoke()
+    public function __invoke(): ?array
     {
         return transform(auth()->user(), fn (User $user) => [
             'sub' => (string) $user->id,

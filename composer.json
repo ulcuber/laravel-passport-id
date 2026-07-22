@@ -15,6 +15,7 @@
         "laravel/fortify": "^1.37.2",
         "laravel/framework": "^13.7",
         "laravel/horizon": "^5.48",
+        "laravel/octane": "^2.18",
         "laravel/passport": "^13.0",
         "laravel/tinker": "^3.0",
         "laravel/wayfinder": "^0.1.14"
@@ -53,7 +54,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "bunx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve --host=localhost\" \"php artisan horizon\" \"php artisan pail --timeout=0\" \"bun run dev\" --names=server,queue,logs,vite --kill-others"
+            "bunx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan octane:start --port=8007\" \"php artisan horizon\" \"php artisan pail --timeout=0\" \"bun run dev\" --names=server,queue,logs,vite --kill-others"
         ],
         "lint": [
             "pint --parallel"
